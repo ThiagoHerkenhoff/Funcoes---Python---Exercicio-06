@@ -1,0 +1,48 @@
+"""
+Escrever uma função chamada calcular_imc que receba o peso e a altura de uma pessoa e 
+retorne o IMC calculado. Em seguida, escrever uma função chamada classificar_imc que receba
+o IMC calculado e retorne uma string indicando a classificação do IMC de acordo
+com a tabela abaixo:
+
+    Abaixo do peso: IMC < 18.5
+    Peso normal: 18.5 <= IMC < 24.9
+    Sobrepeso: 25 <= IMC < 29.9
+    Obesidade grau 1: 30 <= IMC < 34.9
+    Obesidade grau 2: 35 <= IMC < 39.9
+    Obesidade grau 3: IMC >= 40
+
+Instruções
+
+    Escrever a função calcular_imc.
+    Escrever a função classificar_imc.
+    Pedir ao usuário que insira seu peso e altura.
+    Usar as funções para calcular o IMC e classificar o resultado.
+    Exibir o IMC e a classificação ao usuário.
+"""
+
+def calcular_imc(peso, altura):
+    imc = peso / altura ** 2
+    return imc
+
+def classificar_imc(imc):
+    if imc < 18.5:
+        return 'Abaixo do peso'
+    elif imc >= 18.5 and imc < 24.9:
+        return 'Peso Normal'
+    elif imc >= 25 and imc < 29.9:
+        return 'Sobrepeso'
+    elif imc >= 30 and imc < 34.9:
+        return 'Sobrepeso Grau 1'
+    elif imc >= 35 and imc < 39.9:
+        return 'Sobrepeso Grau 2'
+    else:
+         return 'Sobrepeso Grau 3'
+
+peso = float(input('Informe o seu peso em Kilogramas: '))
+
+altura = float(input('Informe a sua altura em metros: '))
+
+imc = calcular_imc(peso, altura)
+
+print(f'O seu IMC é de: {calcular_imc(peso, altura):.2f}')
+print(f'A sua classificação é: {classificar_imc(imc)}')
